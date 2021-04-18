@@ -1,0 +1,12 @@
+{% extends 'list/index.html'%}
+{% block title %}Create a post{% endblock %}
+{% block content %}
+<div class="wrapper_create_form">
+    <h1 class="h1_all">NEW POST</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="create_submit" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

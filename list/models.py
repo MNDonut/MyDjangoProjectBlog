@@ -1,9 +1,10 @@
 from django.db import models
+import datetime
 
 class Post(models.Model):
-    title = models.CharField(max_length=30)
-    description = models.TextField(max_length=500)
-    date = models.DateField(auto_now_add=True, editable=True, blank=False)
+    title = models.CharField(max_length=100, verbose_name='')
+    description = models.TextField(verbose_name='')
+    date = models.DateTimeField(auto_now_add=True, verbose_name='')
 
     def __str__(self):
         return f"Title: {self.title}\n, Description: {self.description}\n, Date: {self.date}\n"
