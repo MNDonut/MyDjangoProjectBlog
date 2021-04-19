@@ -1,0 +1,12 @@
+{% extends 'list/index.html'%}
+{% block title %}Edit post {{obj.id}}{% endblock %}
+{% block content %}
+<div class="wrapper_create_form">
+    <h1 class="h1_all">Edit</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="create_submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

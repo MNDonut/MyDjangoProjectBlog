@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import PostForm
 from .models import Post
-import requests
 
 def main(request, slug=''):
     context = {}
@@ -32,4 +31,18 @@ def post_by_id(request, id):
         'obj': obj
     }
     return render(request, f"list/form_get.html", context)
+
+def edit_by_id(request, id):
+    if request.method == "GET":
+        post = Post.get_by_id(id)
+        form = PostForm(instance=post)
+        return render(request, 'list/form_update.html', {'form': form})
+    else:
+        post = Post.get_by_id(id)
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+        all = Post.objects.all()
+        return render(request, 'list/all.html', {"posts": all})
+    return redirect('main')
 
