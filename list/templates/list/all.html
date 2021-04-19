@@ -7,9 +7,10 @@
     <ul class="list_all">
         {% for post in posts|dictsort:"date" %}
         <li class="li_all">
-            <p>{{post.title}}</p>
-            <p>{{post.description}}</p>
-            <p>{{post.date}}</p>
+            <a href="#" class="post-title">{{post.title|slice:"20"}}</a>
+            <!-- slice of description(when it's too big) -->
+            <p class="post-description">{{post.description|slice:"60"}}</p>
+            <p class="post-date">{{post.date}}</p>
         </li>
     </ul>
     

@@ -24,5 +24,6 @@ def main(request, slug=''):
         else:
             context["form"] = form
             return render(request, f"list/form_create.html", context)
+    return render(request, f"list/all.html", {})
 
 

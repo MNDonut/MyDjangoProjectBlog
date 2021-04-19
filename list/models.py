@@ -2,6 +2,8 @@ from django.db import models
 import datetime
 
 class Post(models.Model):
+    """Implementation of Post model"""
+    # verbose name - title on the left side of input
     title = models.CharField(max_length=100, verbose_name='')
     description = models.TextField(verbose_name='')
     date = models.DateTimeField(auto_now_add=True, verbose_name='')

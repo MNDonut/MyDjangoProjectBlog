@@ -8,9 +8,9 @@ class PostForm(ModelForm):
         fields = "__all__"
         widgets = {
             'title': TextInput(attrs={
-                'class': 'post-title', 
+                'class': 'create-title', 
                 'placeholder': 'Enter title'}),
             'description': Textarea(attrs={
-                'class': 'post-description',
+                'class': 'create-description',
                 'placeholder': 'Your description for this post'})
         }
