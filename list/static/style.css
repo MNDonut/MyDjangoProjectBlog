@@ -42,7 +42,7 @@ body {
 }
 
 .left-menu{
-    height: 100vh;
+    height: 99vh;
     text-align: center;
     background-color: rgb(15, 15, 15);
     max-width: 100%;
@@ -72,7 +72,7 @@ body {
 }
 
 .wrapper_all {
-    height: 100%;
+    height: auto;
 }
 
 .li_all {
@@ -80,6 +80,11 @@ body {
     margin: 10px 20px;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
+    transition: 0.5s ease-in;
+}
+
+.li_all:hover{
+    background-color: rgba(4, 47, 71, 0.253);
 }
 
 .h1_all {
@@ -166,16 +171,19 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
+.create-title, .create-description, .create_submit {
+    outline-style: none;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+}
+
 .create-title{
     width: 88%;
     height: 5vh;
     margin-bottom: 2vh;
-    outline-style: none;
     border-radius: 5px;
-    font-size: 16px;
     outline-color: #ffffff;
     color: coral;
-    font-family: 'Rubik', sans-serif;
     padding: 0 10px;
 }
 
@@ -184,24 +192,18 @@ body {
     width: 88%;
     padding: 10px;
     height: 68vh;
-    outline-style: none;
-    font-size: 16px;
     overflow: auto;
     border-radius: 5px;
     color: #16c;
-    font-family: 'Rubik', sans-serif;
 }
 
 .create_submit {
     height: 7vh;
     width: 10vw;
-    outline-style: none;
     background-color: rgb(4, 185, 43);
     border: 2px solid rgb(4, 185, 43);
     border-radius: 5px;
-    font-size: 16px;
     color: rgb(248, 248, 248);
-    font-family: 'Rubik', sans-serif;
     cursor: pointer;
 }
 

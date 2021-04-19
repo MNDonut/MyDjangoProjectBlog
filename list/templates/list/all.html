@@ -8,9 +8,11 @@
         {% for post in posts|dictsort:"date" %}
         <li class="li_all">
             <!--add id to 'a' tag-->
+            <!--it's connected with view with name "by_id" that has <int:id> and this view gets
+                parameter id-->
             <a href="{% url 'by_id' id=post.pk%}" class="post-title">{{post.title|slice:"20"}}</a>
             <!-- slice of description(when it's too big) -->
-            <p class="post-description">{{post.description|slice:"60"}}</p>
+            <p class="post-description">{{post.description|slice:"50"}}</p>
             <p class="post-date">{{post.date}}</p>
         </li>
     </ul>
