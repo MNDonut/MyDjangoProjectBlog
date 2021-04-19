@@ -26,4 +26,10 @@ def main(request, slug=''):
             return render(request, f"list/form_create.html", context)
     return render(request, f"list/all.html", {})
 
+def post_by_id(request, id):
+    obj = Post.get_by_id(id)
+    context = {
+        'obj': obj
+    }
+    return render(request, f"list/form_get.html", context)
 

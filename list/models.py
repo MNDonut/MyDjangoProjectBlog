@@ -15,3 +15,8 @@ class Post(models.Model):
     def create(title, description, date=None):
         newPost = Post(title=title, description=description, date=date)
         newPost.save()
+
+    @staticmethod
+    def get_by_id(id):
+        obj = Post.objects.get(pk=id)
+        return obj
