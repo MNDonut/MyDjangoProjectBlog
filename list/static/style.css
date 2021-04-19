@@ -92,6 +92,16 @@ body {
     padding: 10px;
 }
 
+.get_description {
+    margin: 0 20px;
+    padding: 10px;
+    height: 80vh;
+    text-align: left;
+    color: #16c;
+    font-family: 'Rubik', sans-serif;
+    border: 2px solid rgb(29, 26, 26);
+}
+
 .post-title{
     outline-color: #ffffff;
     color: coral;

@@ -1,7 +1,8 @@
 {% extends 'list/index.html'%}
 {% block title %}Post {{obj.id}}{% endblock %}
 {% block content %}
-<div class="wrapper_create_form">
+<div class="wrapper_get">
     <h1 class="h1_all">{{obj.title}}</h1>
+    <p class="get_description">{{obj.description}}</p>
 </div>
 {% endblock %}
