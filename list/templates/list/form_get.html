@@ -5,7 +5,7 @@
     <h1 class="h1_all">{{obj.title}}</h1>
     <div class="get_buttons">
         <a href="{% url 'edit_id' id=obj.pk%}" class="get_button1">Edit</a>
-        <a href="" class="get_button2">Delete</a>
+        <a href="{% url 'delete_id' id=obj.pk%}" class="get_button2">Delete</a>
     </div>
     <p class="get_description">{{obj.description}}</p>
 </div>

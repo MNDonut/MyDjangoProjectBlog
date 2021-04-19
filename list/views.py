@@ -33,10 +33,12 @@ def post_by_id(request, id):
     return render(request, f"list/form_get.html", context)
 
 def edit_by_id(request, id):
+    # if get it means that it's just showing a form with instance data
     if request.method == "GET":
         post = Post.get_by_id(id)
         form = PostForm(instance=post)
         return render(request, 'list/form_update.html', {'form': form})
+    # else it's saving / editing a form(always use request.POST if you change/create smth)
     else:
         post = Post.get_by_id(id)
         form = PostForm(request.POST, instance=post)
@@ -45,4 +47,8 @@ def edit_by_id(request, id):
         all = Post.objects.all()
         return render(request, 'list/all.html', {"posts": all})
     return redirect('main')
+
+def delete_by_id(request, id):
+    Post.delete_by_id(id)
+    return redirect(main)
 

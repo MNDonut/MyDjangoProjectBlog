@@ -20,3 +20,8 @@ class Post(models.Model):
     def get_by_id(id):
         obj = Post.objects.get(pk=id)
         return obj
+
+    @staticmethod
+    def delete_by_id(id):
+        obj = Post.get_by_id(id)
+        obj.delete()
